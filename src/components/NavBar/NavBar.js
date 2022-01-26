@@ -7,7 +7,7 @@ import "./NavBar.scss"
 export const NavBar = () => {
     return (
         <header className="header">
-            PRUEBA LETRA HEADER
+            prueba letra header
         </header>
     )
 }
