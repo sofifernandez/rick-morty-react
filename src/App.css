@@ -1,13 +1,9 @@
-@font-face {
-  font-family: "NeueMachina";
-  src: url("https://github.com/sofifernandez/rick-morty-react/blob/main/src/font/ppneuemachina-regular-webfont.woff")
-      format("woff") url("https://yoursite.com/css/fonts/CustomFont.otf")
-      format("opentype"),
-    url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg");
-}
-
 * {
   font-family: "NeueMachina", Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
+}
+
+body {
+  background-color: #fafaf0;
 }
