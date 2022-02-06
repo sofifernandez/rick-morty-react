@@ -5,7 +5,7 @@ export const Home = () => {
 
     return (
         <>
-            <div className="row justify-content-center container-fluid mx-0 px-0" id='home-body'>
+            <div className="row justify-content-center container-fluid" id='home-body'>
                 <div className="col-10 col-md-4 mb-4 ms-lg-4">
                     <img className='img-fluid' id="cartel" src={blackwhiteimg} alt="BW" />
                 </div>

@@ -1,8 +1,13 @@
+import './CharacterList.scss'
 export const CharacterList = ({ character }) => {
     return (
-        <div className="row justify-content-center col-10 col-sm-3 mb-5">
-            <img className="card-img-top img-fluid" src={character.image} alt="S" />
-            <div className="card-body col-11">
+        <div className="row justify-content-center col-6 col-lg-4 mb-5 characterDiv">
+            <img className="img-top img-fluid" src={character.image} alt="S" />
+            <div className="overlay fs-5 px-0 text-center d-none d-md-block">
+                <p className='centered'>{character.name}</p>
+            </div>
+            {/* MOBILE */}
+            <div className="card-body-mobile col-11 d-block d-md-none">
                 <p className="card-text nombreProducto">
                     <b>{character.name}</b>
                 </p>

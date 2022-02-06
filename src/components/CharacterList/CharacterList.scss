@@ -1,0 +1,38 @@
+.characterDiv {
+  position: relative;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7); /* Black see-through */
+  color: #f1f1f1;
+  transition: 0.1s ease;
+  opacity: 0;
+  color: white;
+  text-align: center;
+  height: 100%;
+  width: 82%;
+}
+
+.characterDiv:hover .overlay {
+  opacity: 1;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+}
+
+// MOBILE
+// X-Small	None	<576px
+// Small	sm	≥576px
+
+//COMPUS
+// Medium	md	≥768px
+// Large	lg	≥992px
+// Extra large	xl	≥1200px
+// Extra extra large	xxl	≥1400px

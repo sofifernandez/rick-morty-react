@@ -8,7 +8,7 @@ export const CharacterListContainer = () => {
     useEffect(() => {
         fetch('https://rickandmortyapi.com/api/character/?page=2')
             .then(res => res.json()
-            .then(data=>setCharacters(data.results)))
+            .then(data=>setCharacters(data.results.slice(0, 6))))
     }, [])
     console.log(characters)
     return (
