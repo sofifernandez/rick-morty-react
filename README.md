@@ -1,4 +1,4 @@
-# This is Riggity Wrecked, son! :wine_glass:
+# This is Riggity Wrecked, son! :wine_glass: WORK IN PROGRESS...
 
 A personal project to expand my portfolio using React and this amazing [Rick and Morty API](https://rickandmortyapi.com/) created by Axel Fuhrmann. You can find the deploy [here](https://riggity-wrecked.netlify.app/).
 

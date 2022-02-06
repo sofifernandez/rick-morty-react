@@ -10,14 +10,14 @@ export const CharacterListContainer = () => {
             .then(res => res.json()
             .then(data=>setCharacters(data.results.slice(0, 6))))
     }, [])
-    console.log(characters)
+    //console.log(characters)
     return (
       <div className='container-fluid  row justify-content-center mt-0 mx-0 px-0 mb-5'>
         <div className="character-section pt-4 mt-4 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-11 col-md-10">
-          <div>
-            Characters
+          <div className='characterTittle fs-1 text-center'>
+            ~characters~
           </div>
-          <div className="pt-4 mt-4 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-11 col-md-10">
+          <div className="pt-4 mt-4 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-11">
           {characters.length ? characters.map((character) => ( <CharacterList character={character} key={character.id} />))
             : "Loading..."
           }

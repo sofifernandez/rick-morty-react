@@ -13,7 +13,7 @@ export const NavBar = () => {
             <div className="header-category">
                 <a href="#ui-kits" className="header-links">
                     <div className="header-category-tag">
-                        Characters
+                        characters
                     </div>
                     <div className="header-tag-circle yellow">
                     </div>
@@ -22,7 +22,7 @@ export const NavBar = () => {
             <div className="header-category">
                 <a href="#ui-kits" className="header-links">
                     <div className="header-category-tag">
-                        Episodes
+                        episodes
                     </div>
                     <div className="header-tag-circle skyblue">
                     </div>
@@ -31,7 +31,7 @@ export const NavBar = () => {
             <div className="header-category">
                 <a href="#ui-kits" className="header-links">
                     <div className="header-category-tag">
-                        Locations
+                        locations
                     </div>
                     <div className="header-tag-circle red">
                     </div>

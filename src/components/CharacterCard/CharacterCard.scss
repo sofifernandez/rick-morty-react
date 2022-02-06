@@ -1,0 +1,72 @@
+.mainCard {
+  background-color: #ffdb59;
+  border-radius: 1rem;
+  border: 3px solid black;
+  box-shadow: 3px 3px black;
+}
+
+.cardName {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.propertyTitle {
+  background-color: white;
+  border-radius: 2rem;
+  border: 2px solid #000;
+}
+
+.speciesTitleCircle {
+  width: 32px;
+  height: 32px;
+  align-items: flex-end;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: #28eca5;
+}
+
+.statusTitleCircle {
+  @extend .speciesTitleCircle;
+  background-color: #e964bb;
+}
+
+.originTitleCircle {
+  @extend .speciesTitleCircle;
+  background-color: #ff5959;
+}
+
+.more {
+  background-color: #49a6fc;
+  max-width: fit-content;
+  font-weight: 900;
+  transform: rotate(-4deg);
+}
+
+.info {
+  @extend .more;
+  background-color: #ffb74b;
+  transform: rotate(+4deg);
+}
+
+.moreInfoText {
+  background-color: white;
+  border-radius: 1rem;
+  border: 3px solid black;
+  box-shadow: 3px 3px black;
+}
+
+.moreInfoTitleCircle {
+  @extend .speciesTitleCircle;
+  background-color: black;
+}
+
+.moreInfoTitle {
+  width: fit-content;
+  font-weight: 900;
+}
+
+.lalala {
+  border: 2px solid black;
+  width: 300px;
+  height: auto;
+}
