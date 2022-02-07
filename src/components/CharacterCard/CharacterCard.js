@@ -2,15 +2,46 @@ import './CharacterCard.scss'
 import { useEffect, useState } from "react";
 
 export const CharacterCard = () => {
-    const [card, setCard] = useState([]);
+    const [card, setCards] = useState([]);
+    const [pokemons, setPokemons] = useState(null);
 
     useEffect(() => {
         fetch('https://rickandmortyapi.com/api/character/2')
             .then(res => res.json()
-            .then(data=>setCard(data)))
+            .then(data=>setCards(data)))
     }, [])
 
-    console.log(card)
+    
+
+    // useEffect(() => {
+    //     (async () => {
+    //     try {
+    //         const url = 'https://rickandmortyapi.com/api/character/2';
+    //         const response = await fetch(url);
+    //         const data = await response.json();
+    //         console.log(data);
+    //         setCard(data);
+    //     } catch (err) {
+    //         console.log(err);
+
+    //     }
+    //     })()
+    // }, [])
+    
+    
+      useEffect(() => {
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=10")
+      .then((response) => response.json()) //es otra promise
+      .then((data) => {
+        setPokemons(data.results); // .results es de la API, es lo que me interesa
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      }, []);
+    
+    console.log(pokemons)
+
     return (
         <div className='cardContainer d-flex row container-fluid justify-content-evenly mx-0 mb-5 my-md-auto'>
             {/* CARD */}
@@ -55,7 +86,7 @@ export const CharacterCard = () => {
                         </div>
                     </div>
                     <div className='col-4 fs-3'>
-                        {card.origin.name}
+                        {card.length && card.origin.name}
                     </div>
                 </div>    
             </div>
@@ -80,7 +111,7 @@ export const CharacterCard = () => {
                         </div>
                     </div>
                     <div className='fs-4 mb-4'>
-                        {card.location.name}
+                        {card.legth && card.location.name}
                     </div>
                     {/* MORE INFO -EPISODES */}
                     <div className='row mx-auto justify-content-start'>
@@ -91,7 +122,7 @@ export const CharacterCard = () => {
                         </div>
                     </div>
                     <div className='fs-4 mb-2'>
-                        {card.episode.length}
+                        {card.length && card.episode.length}
                     </div>
                 </div>
             </div>
