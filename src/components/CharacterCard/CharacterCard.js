@@ -2,46 +2,18 @@ import './CharacterCard.scss'
 import { useEffect, useState } from "react";
 
 export const CharacterCard = () => {
-    const [card, setCards] = useState([]);
-    const [pokemons, setPokemons] = useState(null);
+    const [card, setCards] = useState();
 
     useEffect(() => {
         fetch('https://rickandmortyapi.com/api/character/2')
             .then(res => res.json()
-            .then(data=>setCards(data)))
+                .then(data => setCards(data)))
     }, [])
 
-    
 
-    // useEffect(() => {
-    //     (async () => {
-    //     try {
-    //         const url = 'https://rickandmortyapi.com/api/character/2';
-    //         const response = await fetch(url);
-    //         const data = await response.json();
-    //         console.log(data);
-    //         setCard(data);
-    //     } catch (err) {
-    //         console.log(err);
-
-    //     }
-    //     })()
-    // }, [])
     
-    
-      useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=10")
-      .then((response) => response.json()) //es otra promise
-      .then((data) => {
-        setPokemons(data.results); // .results es de la API, es lo que me interesa
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-      }, []);
-    
-    console.log(pokemons)
-
+    if (!card) return null;
+    console.log(card.location.name)
     return (
         <div className='cardContainer d-flex row container-fluid justify-content-evenly mx-0 mb-5 my-md-auto'>
             {/* CARD */}
@@ -53,7 +25,7 @@ export const CharacterCard = () => {
                 {/* CARD SPECIES */}
                 <div className='species col-12 row justify-content-evenly mb-3'>
                     <div className='col-6 propertyTitle row'>
-                        <div className='col-6 speciesTitleCircle my-auto'>     
+                        <div className='col-6 speciesTitleCircle my-auto'>
                         </div>
                         <div className='col-6 fs-3 my-auto'>
                             Species
@@ -66,7 +38,7 @@ export const CharacterCard = () => {
                 {/* CARD STATUS */}
                 <div className='status col-12 row justify-content-evenly mb-3'>
                     <div className='col-6 propertyTitle row'>
-                        <div className='col-6 statusTitleCircle my-auto'>     
+                        <div className='col-6 statusTitleCircle my-auto'>
                         </div>
                         <div className='col-6 fs-3 my-auto'>
                             Status
@@ -79,16 +51,16 @@ export const CharacterCard = () => {
                 {/* CARD ORIGIN */}
                 <div className='species col-12 row justify-content-evenly mb-3'>
                     <div className='col-6 propertyTitle row'>
-                        <div className='col-6 originTitleCircle my-auto'>     
+                        <div className='col-6 originTitleCircle my-auto'>
                         </div>
                         <div className='col-6 fs-3 my-auto'>
                             Origin
                         </div>
                     </div>
                     <div className='col-4 fs-3'>
-                        {card.length && card.origin.name}
+                        {card.origin.name}
                     </div>
-                </div>    
+                </div>
             </div>
 
 
@@ -100,29 +72,29 @@ export const CharacterCard = () => {
                 <div className='info text-center mx-auto fs-1 mb-4'>
                     INFO:
                 </div>
-                
+
                 <div className='moreInfoText row py-4'>
                     {/* MORE INFO -LOCATION */}
                     <div className='row mx-auto justify-content-start'>
-                        <div className='col-3 moreInfoTitleCircle my-auto'>     
+                        <div className='col-3 moreInfoTitleCircle my-auto'>
                         </div>
                         <div className='col-8 fs-4 my-auto moreInfoTitle'>
                             Last known location:
                         </div>
                     </div>
                     <div className='fs-4 mb-4'>
-                        {card.legth && card.location.name}
+                        {card.location.name}
                     </div>
                     {/* MORE INFO -EPISODES */}
                     <div className='row mx-auto justify-content-start'>
-                        <div className='col-3 moreInfoTitleCircle my-auto'>     
+                        <div className='col-3 moreInfoTitleCircle my-auto'>
                         </div>
                         <div className='col-8 fs-4 my-auto moreInfoTitle'>
                             Episodes:
                         </div>
                     </div>
                     <div className='fs-4 mb-2'>
-                        {card.length && card.episode.length}
+                        {card.episode.length}
                     </div>
                 </div>
             </div>
