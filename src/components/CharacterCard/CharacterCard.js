@@ -11,20 +11,21 @@ export const CharacterCard = () => {
     }, [])
 
 
-    
     if (!card) return null;
-    console.log(card.location.name)
+
     return (
         <div className='cardContainer d-flex row container-fluid justify-content-evenly mx-0 mb-5 my-md-auto'>
-            {/* CARD */}
-            <div className='mainCard col-11 col-md-5 justify-content-center row mb-5'>
+            {/* -------------------------------------------------------------------------- */
+            /*                                    CARD                                    */
+            /* -------------------------------------------------------------------------- */}
+            <div className='mainCard col-11 col-md-6 col-lg-5 justify-content-center row mb-5'>
                 <img className='rounded mx-auto d-block mt-3 col-10 lalala px-0' src={card.image} alt="" />
                 <div className='text-center cardName fs-2 col-12 my-3'>
                     {card.name}
                 </div>
                 {/* CARD SPECIES */}
                 <div className='species col-12 row justify-content-evenly mb-3'>
-                    <div className='col-6 propertyTitle row'>
+                    <div className='col-7 propertyTitle row'>
                         <div className='col-6 speciesTitleCircle my-auto'>
                         </div>
                         <div className='col-6 fs-3 my-auto'>
@@ -37,7 +38,7 @@ export const CharacterCard = () => {
                 </div>
                 {/* CARD STATUS */}
                 <div className='status col-12 row justify-content-evenly mb-3'>
-                    <div className='col-6 propertyTitle row'>
+                    <div className='col-7 propertyTitle row'>
                         <div className='col-6 statusTitleCircle my-auto'>
                         </div>
                         <div className='col-6 fs-3 my-auto'>
@@ -50,7 +51,7 @@ export const CharacterCard = () => {
                 </div>
                 {/* CARD ORIGIN */}
                 <div className='species col-12 row justify-content-evenly mb-3'>
-                    <div className='col-6 propertyTitle row'>
+                    <div className='col-7 propertyTitle row'>
                         <div className='col-6 originTitleCircle my-auto'>
                         </div>
                         <div className='col-6 fs-3 my-auto'>
@@ -63,9 +64,10 @@ export const CharacterCard = () => {
                 </div>
             </div>
 
-
-            {/* MORE INFO */}
-            <div className='moreInfo col-9 col-md-3 my-auto text-center justify-content-center'>
+            {/* -------------------------------------------------------------------------- */
+            /*                                  MORE INFO                                 */
+            /* -------------------------------------------------------------------------- */}
+            <div className='moreInfo col-9 col-md-5 col-lg-3 my-auto text-center justify-content-center'>
                 <div className='more text-center mx-auto fs-1'>
                     MORE
                 </div>

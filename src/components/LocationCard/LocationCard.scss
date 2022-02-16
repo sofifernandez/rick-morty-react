@@ -1,0 +1,30 @@
+.locationCard {
+  background-color: #ede5df;
+  border-bottom: solid 5px black;
+  p {
+    font-family: "Galindo", cursive;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+}
+
+.propertyType {
+  background-color: #ffb74b;
+  width: fit-content;
+  transform: rotate(-4deg);
+  border: dashed 2px black;
+}
+
+.propertyDimension {
+  background-color: #49a6fc;
+  width: fit-content;
+  transform: rotate(+0.8deg);
+  border: dashed 2px black;
+}
+
+.propertyResidents {
+  background-color: #28eca5;
+  width: fit-content;
+  transform: rotate(-3deg);
+  border: dashed 2px black;
+}

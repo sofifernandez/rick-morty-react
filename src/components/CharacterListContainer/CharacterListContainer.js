@@ -12,7 +12,7 @@ export const CharacterListContainer = () => {
     }, [])
     
     return (
-      <div className='container-fluid  row justify-content-center mt-0 mx-0 px-0 mb-5'>
+      <div className='container-fluid row justify-content-center mt-0 mx-0 px-0 mb-5'>
         <div className="character-section pt-4 mt-4 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-11 col-md-10">
           <div className='characterTittle fs-1 text-center'>
             ~characters~
