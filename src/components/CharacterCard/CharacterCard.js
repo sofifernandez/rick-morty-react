@@ -14,12 +14,12 @@ export const CharacterCard = () => {
     if (!card) return null;
 
     return (
-        <div className='cardContainer d-flex row container-fluid justify-content-evenly mx-0 mb-5 my-md-auto'>
+        <div className='d-flex row container-fluid justify-content-evenly mx-0 mb-5 my-md-auto'>
             {/* -------------------------------------------------------------------------- */
             /*                                    CARD                                    */
             /* -------------------------------------------------------------------------- */}
             <div className='mainCard col-11 col-md-6 col-lg-5 justify-content-center row mb-5'>
-                <img className='rounded mx-auto d-block mt-3 col-10 lalala px-0' src={card.image} alt="" />
+                <img className='rounded mx-auto d-block mt-3 col-10 px-0 imagen' src={card.image} alt="" />
                 <div className='text-center cardName fs-2 col-12 my-3'>
                     {card.name}
                 </div>

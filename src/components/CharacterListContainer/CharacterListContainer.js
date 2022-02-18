@@ -8,7 +8,7 @@ export const CharacterListContainer = () => {
     useEffect(() => {
         fetch('https://rickandmortyapi.com/api/character/?page=2')
             .then(res => res.json()
-            .then(data=>setCharacters(data.results.slice(0, 6))))
+            .then(data=>setCharacters(data.results.slice(0, 8))))
     }, [])
     
     return (
@@ -17,7 +17,7 @@ export const CharacterListContainer = () => {
           <div className='characterTittle fs-1 text-center'>
             ~characters~
           </div>
-          <div className="pt-4 mt-4 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-11">
+          <div className="pt-4 mt-4 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-12">
           {characters.length ? characters.map((character) => ( <CharacterList character={character} key={character.id} />))
             : "Loading..."
           }

@@ -1,0 +1,44 @@
+.mainCardEpisode {
+  background-color: #e5f9e9;
+  border-radius: 1rem;
+  border: 3px solid black;
+  box-shadow: 3px 3px black;
+}
+
+.episodeName {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Galindo", cursive;
+}
+
+.imagen {
+  border: 2px solid black;
+  width: 300px;
+  height: auto;
+}
+
+.propertyTitleEpisode {
+  //width: fit-content;
+  background-color: white;
+  border-radius: 2rem;
+  border: 2px solid #000;
+}
+
+.nameTitleCircle {
+  width: 32px;
+  height: 32px;
+  align-items: flex-end;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: #ffdb59;
+}
+
+.dateTitleCircle {
+  @extend .nameTitleCircle;
+  background-color: #e964bb;
+}
+
+.charactersTitleCircle {
+  @extend .nameTitleCircle;
+  background-color: #49a6fc;
+}

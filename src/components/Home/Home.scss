@@ -2,14 +2,12 @@
   margin-top: 5rem;
 }
 
-.titles {
-  max-width: fit-content;
-  font-size: 4rem;
-  font-weight: 900;
-  box-shadow: 5px 5px #888888;
-}
-
 .title-backcolor_1 {
+  //width: fit-content;
+  //font-size: 3rem;
+  font-weight: 900;
+  border-radius: 3px;
+  box-shadow: 2px 2px #3f3f3f;
   background-color: #a962e1;
   transform: rotate(-4deg);
   transition: transform 3s;
@@ -17,10 +15,12 @@
     transform: scale(1);
     border: dashed 2px black;
     z-index: 1;
+    box-shadow: 5px 5px #3f3f3f;
   }
 }
 
 .title-backcolor_2 {
+  @extend .title-backcolor_1;
   background-color: #ffdb59;
   transform: rotate(+0.8deg);
   &:hover {
@@ -31,6 +31,7 @@
 }
 
 .title-backcolor_3 {
+  @extend .title-backcolor_1;
   background-color: #ff5959;
   transform: rotate(-3deg);
   &:hover {
@@ -40,7 +41,9 @@
   }
 }
 
-// LETRAS DAZANTES
+/* -------------------------------------------------------------------------- */
+/*                              DANCING QUOTES                             */
+/* -------------------------------------------------------------------------- */
 .quotes > p {
   font-style: italic;
   font-weight: 800;
