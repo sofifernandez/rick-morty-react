@@ -7,7 +7,7 @@ import "./../../font/stylesheet.css"
 
 export const NavBar = () => {
     return (
-        <header className="header">
+        <header className="header mb-5">
             <div className="heroline"></div>
             <h1 className="animate__animated animate__swing">Rick and Morty</h1>
             <div className="header-category">

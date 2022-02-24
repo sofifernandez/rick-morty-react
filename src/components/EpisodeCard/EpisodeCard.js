@@ -1,23 +1,25 @@
-import './EpisodeCard.scss'
 import { useEffect, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 import { CharacterList } from '../CharacterList/CharacterList'
+import './EpisodeCard.scss'
 
 export const EpisodeCard = () => {
+    const { episodeId } = useParams();
     const [episode, setEpisode] = useState();
     const [charactersURL, setCharactersURL] = useState([]);
     const [charactersList, setCharactersList] = useState();
 
     useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/episode/28')
+        fetch(`https://rickandmortyapi.com/api/episode/${episodeId}`)
             .then(res => res.json()
                 .then(data => setEpisode(data)))
-    }, [])
+    }, [episodeId])
 
      useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/episode/28')
+        fetch(`https://rickandmortyapi.com/api/episode/${episodeId}`)
             .then(res => res.json()
                 .then(data => setCharactersURL(data.characters)))
-    }, [])
+    }, [episodeId])
 
 
     useEffect(() => {

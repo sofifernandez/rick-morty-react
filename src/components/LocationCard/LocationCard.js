@@ -1,23 +1,25 @@
-import './LocationCard.scss'
 import { useEffect, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 import { CharacterList } from '../CharacterList/CharacterList'
+import './LocationCard.scss'
 
 export const LocationCard = () => {
+    const { locationId } = useParams();
     const [location, setLocation] = useState();
     const [residentsURL, setResidentsURL] = useState([]);
     const [residentsList, setResidentsList] = useState();
 
     useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/location/8')
+        fetch(`https://rickandmortyapi.com/api/location/${locationId}`)
             .then(res => res.json()
                 .then(data => setLocation(data)))
-    }, [])
+    }, [locationId])
 
     useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/location/8')
+        fetch(`https://rickandmortyapi.com/api/location/${locationId}`)
             .then(res => res.json()
                 .then(data => setResidentsURL(data.residents)))
-    }, [])
+    }, [locationId])
 
 
     useEffect(() => {

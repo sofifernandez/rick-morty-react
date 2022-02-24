@@ -6,7 +6,7 @@ export const CharacterListContainer = () => {
     const [characters, setCharacters] = useState([]);
 
     useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/character/?page=2')
+        fetch('https://rickandmortyapi.com/api/character')
             .then(res => res.json()
             .then(data=>setCharacters(data.results.slice(0, 8))))
     }, [])

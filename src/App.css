@@ -7,3 +7,8 @@
 body {
   background-color: #fafaf0;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}

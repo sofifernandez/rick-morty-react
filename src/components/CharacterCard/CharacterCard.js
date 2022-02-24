@@ -1,18 +1,39 @@
-import './CharacterCard.scss'
 import { useEffect, useState } from "react";
+import { useParams, NavLink } from "react-router-dom";
+import './CharacterCard.scss'
 
 export const CharacterCard = () => {
+    const { characterId } = useParams();
     const [card, setCards] = useState();
+    const [locationID, setLocationID]=useState([])
 
     useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/character/2')
+        fetch(`https://rickandmortyapi.com/api/character/${characterId}`)
             .then(res => res.json()
                 .then(data => setCards(data)))
-    }, [])
+    }, [characterId])
 
+    const handleClick = () => {
+        fetch(card.origin.url)
+            .then(res => res.json()
+            .then(console.log(res))
+                .then(data => setLocationID(data.id)))
+        
+        console.log(locationID)
+    }
+
+
+
+
+    // useEffect(() => {
+    //     fetch(card.origin.url)
+    //         .then(res => res.json()
+    //             .then(data => setLocationID(data.id)))
+    // }, [card.origin.url])
+
+    console.log(locationID)
 
     if (!card) return null;
-
     return (
         <div className='d-flex row container-fluid justify-content-evenly mx-0 mb-5 my-md-auto'>
             {/* -------------------------------------------------------------------------- */
@@ -58,8 +79,11 @@ export const CharacterCard = () => {
                             Origin
                         </div>
                     </div>
-                    <div className='col-4 fs-3'>
-                        {card.origin.name}
+                    
+                    <div className='col-4 fs-3' onClick={handleClick}>
+                        {/* <NavLink to={`/location/${locationID}`} >  */}
+                            {card.origin.name}
+                         {/* </NavLink>  */}
                     </div>
                 </div>
             </div>
