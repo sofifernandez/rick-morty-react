@@ -5,7 +5,10 @@ import './CharacterCard.scss'
 export const CharacterCard = () => {
     const { characterId } = useParams();
     const [card, setCards] = useState();
-    const [locationID, setLocationID]=useState([])
+    const [locationURL, setLocationURL] = useState([])
+    const [locationID, setlocationID] = useState([])
+    const [originURL, setOriginURL] = useState([])
+    const [originID, setOriginID]=useState([])
 
     useEffect(() => {
         fetch(`https://rickandmortyapi.com/api/character/${characterId}`)
@@ -13,26 +16,30 @@ export const CharacterCard = () => {
                 .then(data => setCards(data)))
     }, [characterId])
 
-    const handleClick = () => {
-        fetch(card.origin.url)
+
+    useEffect(() => {
+        fetch(`https://rickandmortyapi.com/api/character/${characterId}`)
             .then(res => res.json()
-            .then(console.log(res))
-                .then(data => setLocationID(data.id)))
-        
-        console.log(locationID)
-    }
+                .then(data => setLocationURL(data.location.url)))
+        fetch(`https://rickandmortyapi.com/api/character/${characterId}`)
+            .then(res => res.json()
+                .then(data => setOriginURL(data.origin.url)))
+        async function fetchLoc() {
+            const results = await fetch(locationURL)
+                .then(res => res.json());
+            setlocationID(results.id)
+        }
+        async function fetchOri() {
+            const results = await fetch(originURL)
+                .then(res => res.json());
+            setOriginID(results.id)
+        }
+        fetchLoc()
+        fetchOri()
+    }, [characterId,locationURL, originURL])
 
-
-
-
-    // useEffect(() => {
-    //     fetch(card.origin.url)
-    //         .then(res => res.json()
-    //             .then(data => setLocationID(data.id)))
-    // }, [card.origin.url])
 
     console.log(locationID)
-
     if (!card) return null;
     return (
         <div className='d-flex row container-fluid justify-content-evenly mx-0 mb-5 my-md-auto'>
@@ -80,10 +87,10 @@ export const CharacterCard = () => {
                         </div>
                     </div>
                     
-                    <div className='col-4 fs-3' onClick={handleClick}>
-                        {/* <NavLink to={`/location/${locationID}`} >  */}
+                    <div className='col-4 fs-3'>
+                        {originID.length ? <NavLink to={`/location/${originID}`} > 
                             {card.origin.name}
-                         {/* </NavLink>  */}
+                         </NavLink> : card.origin.name}
                     </div>
                 </div>
             </div>
@@ -109,7 +116,9 @@ export const CharacterCard = () => {
                         </div>
                     </div>
                     <div className='fs-4 mb-4'>
-                        {card.location.name}
+                        {locationID>0 ? <NavLink to={`/location/${locationID}`} > 
+                            {card.location.name}
+                         </NavLink>: card.location.name} 
                     </div>
                     {/* MORE INFO -EPISODES */}
                     <div className='row mx-auto justify-content-start'>
