@@ -1,0 +1,23 @@
+.headerSeason {
+  width: fit-content;
+  font-weight: 900;
+}
+
+.episodes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.episodeEach {
+  font-family: "Montserrat";
+  background-color: #ffb74b;
+  color: black;
+  border: 3px solid black;
+  border-radius: 1rem;
+  box-shadow: 2px 2px black;
+  &:hover {
+    color: #ffb74b;
+    background-color: black;
+  }
+}

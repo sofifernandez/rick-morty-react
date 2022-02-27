@@ -88,7 +88,7 @@ export const CharacterCard = () => {
                     </div>
                     
                     <div className='col-4 fs-3'>
-                        {originID.length ? <NavLink to={`/location/${originID}`} > 
+                        {originID >0 ? <NavLink to={`/location/${originID}`} > 
                             {card.origin.name}
                          </NavLink> : card.origin.name}
                     </div>
