@@ -1,5 +1,12 @@
 .characterDiv {
   position: relative;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+
+.imagenChar {
+  border: 2px solid black;
+  border-radius: 1rem;
 }
 
 /* The overlay effect - lays on top of the container and over the image */
@@ -12,7 +19,9 @@
   color: white;
   text-align: center;
   height: 100%;
-  width: 84%;
+  border-radius: 1rem;
+  border: 2px solid black;
+  width: 85%;
   a {
     color: #f1f1f1;
   }

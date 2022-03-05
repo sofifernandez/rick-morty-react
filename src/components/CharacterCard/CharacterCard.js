@@ -16,7 +16,7 @@ export const CharacterCard = () => {
                 .then(data => setCards(data)))
     }, [characterId])
 
-
+    // There is probably an easier way to do this but, it works
     useEffect(() => {
         fetch(`https://rickandmortyapi.com/api/character/${characterId}`)
             .then(res => res.json()
@@ -39,7 +39,6 @@ export const CharacterCard = () => {
     }, [characterId,locationURL, originURL])
 
 
-    console.log(locationID)
     if (!card) return null;
     return (
         <div className='d-flex row container-fluid justify-content-evenly mx-0 mb-5 my-md-auto'>

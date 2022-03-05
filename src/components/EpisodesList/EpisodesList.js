@@ -14,12 +14,12 @@ export const EpisodesList = () => {
             const results = await Promise.all(urlArray.map((url) => fetch(url)
                 .then((r) => r.json())));
             let array = results.map(x => x.results)
-            const array22 = [].concat(array[0], array[1], array[2]);
-            const season01 = array22.filter(x => x.episode.includes('S01'))
-            const season02 = array22.filter(x => x.episode.includes('S02'))
-            const season03 = array22.filter(x => x.episode.includes('S03'))
-            const season04 = array22.filter(x => x.episode.includes('S04'))
-            const season05 = array22.filter(x => x.episode.includes('S05'))
+            const array2 = [].concat(array[0], array[1], array[2]);
+            const season01 = array2.filter(x => x.episode.includes('S01'))
+            const season02 = array2.filter(x => x.episode.includes('S02'))
+            const season03 = array2.filter(x => x.episode.includes('S03'))
+            const season04 = array2.filter(x => x.episode.includes('S04'))
+            const season05 = array2.filter(x => x.episode.includes('S05'))
             const final = [[...season01], [...season02], [...season03], [...season04], [...season05]]
             setEpisodes(final)
         }
@@ -27,9 +27,6 @@ export const EpisodesList = () => {
 
     }, [])
 
-
-
-    console.log(episodes)
     if (!episodes) return null
     return (
         <div className="row container justify-content-center mx-auto">

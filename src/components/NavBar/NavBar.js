@@ -1,13 +1,13 @@
 import "./NavBar.scss"
 import "./../../font/stylesheet.css"
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 export const NavBar = () => {
     return (
         <header className="header mb-5">
             <div className="heroline"></div>
-            <h1 className="animate__animated animate__swing">Rick and Morty</h1>
+            <NavLink to={'/'}><h1 className="animate__animated animate__swing">Rick and Morty</h1></NavLink>
             <div className="header-category">
                 <a href="#ui-kits" className="header-links">
                     <div className="header-category-tag">

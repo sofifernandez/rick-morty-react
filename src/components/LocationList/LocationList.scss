@@ -1,0 +1,23 @@
+.headerLocations {
+  width: fit-content;
+  font-weight: 900;
+}
+
+.locations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.locationEach {
+  font-family: "Montserrat";
+  background-color: #a7ebb4;
+  color: black;
+  border: 3px solid black;
+  border-radius: 1rem;
+  box-shadow: 2px 2px black;
+  &:hover {
+    color: #a7ebb4;
+    background-color: black;
+  }
+}

@@ -6,6 +6,7 @@ import { CharacterCard } from './components/CharacterCard/CharacterCard.js'
 import { LocationCard } from './components/LocationCard/LocationCard.js'
 import { EpisodesList } from "./components/EpisodesList/EpisodesList.js";
 import { EpisodeCard } from './components/EpisodeCard/EpisodeCard'
+import { LocationList } from "./components/LocationList/LocationList.js";
 import "./App.css"
 
 //https://reactrouter.com/docs/en/v6/upgrading/v5
@@ -15,7 +16,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<><Home /><CharacterListContainer /> <EpisodesList/></>} />
+        <Route exact path="/" element={<><Home /><CharacterListContainer /> <EpisodesList/><LocationList/></>} />
         <Route exact path="/character/:characterId" element={<CharacterCard />} />
         <Route exact path="/location/:locationId" element={<LocationCard />} />
         <Route exact path="/episode/:episodeId" element={<EpisodeCard />} />

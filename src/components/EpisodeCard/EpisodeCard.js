@@ -37,7 +37,7 @@ export const EpisodeCard = () => {
             {/* -------------------------------------------------------------------------- */
             /*                                    CARD                                    */
             /* -------------------------------------------------------------------------- */}
-            <div className='row col-9 col-lg-6 justify-content-center mt-5 mb-5 mainCardEpisode'>
+            <div className='row col-9 col-lg-8 col-xl-6 justify-content-center mt-5 mb-5 mainCardEpisode'>
                 <div className='text-center episodeName fs-1 col-12 my-3'>
                     {episode.episode}
                 </div>
