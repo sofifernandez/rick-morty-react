@@ -36,7 +36,7 @@ export const LocationList = () => {
                 <div className="col-12 my-auto heroline"></div>
                 <div className="text-center fs-3 locations pt-3">
                     {locations.length ? locations.map((location) => (
-                        <NavLink to={`/episode/${location.id}`}><div className="px-4 mb-3 locationEach" id={location.id}>{location.name}</div></NavLink>))
+                        <NavLink to={`/location/${location.id}`}><div className="px-4 mb-3 locationEach" id={location.id}>{location.name}</div></NavLink>))
                         : "Loading..."
                     }
                 </div> 

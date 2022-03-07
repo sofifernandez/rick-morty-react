@@ -16,9 +16,12 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<><Home /><CharacterListContainer /> <EpisodesList/><LocationList/></>} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/character" element={<CharacterListContainer />} />
         <Route exact path="/character/:characterId" element={<CharacterCard />} />
+        <Route exact path="/location" element={<LocationList />} />
         <Route exact path="/location/:locationId" element={<LocationCard />} />
+         <Route exact path="/episode" element={<EpisodesList />} />
         <Route exact path="/episode/:episodeId" element={<EpisodeCard />} />
         {/* <Route exact path="/">
           <Home />

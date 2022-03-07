@@ -6,6 +6,16 @@
   padding: 24px;
 }
 
+.headerTitle {
+  font-weight: 900;
+  font-size: 3rem;
+  &:hover {
+    color: white;
+    -webkit-text-stroke: 0.1px black;
+  }
+  border: #000;
+}
+
 .heroline {
   height: 2px;
   background-color: #121213;
@@ -38,11 +48,24 @@
   }
 }
 
+.activated-link {
+  @extend .header-links;
+  background-color: #000;
+  box-shadow: none;
+  transform: translateX(8%);
+  transform: translateY(8%);
+  .header-category-tag {
+    color: white;
+  }
+  .header-tag-circle {
+    background-color: white;
+  }
+}
+
 .header-category-tag {
   margin-right: 8px;
   color: #121213;
   font-size: 32px;
-  //line-height: 100%;
   font-weight: 300;
   letter-spacing: -0.01em;
   text-decoration: none;

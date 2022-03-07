@@ -9,7 +9,7 @@ export const Home = () => {
                 <div className="col-10 col-md-4 mb-4 ms-lg-4">
                     <img className='img-fluid' id="cartel" src={blackwhiteimg} alt="BW" />
                 </div>
-                <div className="justify-content-center col-12 col-sm-8 col-md-5 ms-3 my-5">
+                <div className="justify-content-center col-12 col-sm-8 col-md-5 ms-3 my-auto">
                     {/* CHARACTERS */}
                     <div className="row">
                         <div className="col-8 fs-1 mb-2 text-center title-backcolor_1 animate__animated animate__zoomIn">

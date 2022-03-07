@@ -3,11 +3,12 @@
 }
 
 .title-backcolor_1 {
-  //width: fit-content;
+  width: fit-content;
   //font-size: 3rem;
   font-weight: 900;
+  border: 2px solid black;
   border-radius: 3px;
-  box-shadow: 2px 2px #3f3f3f;
+  box-shadow: 2px 2px black;
   background-color: #a962e1;
   transform: rotate(-4deg);
   transition: transform 3s;

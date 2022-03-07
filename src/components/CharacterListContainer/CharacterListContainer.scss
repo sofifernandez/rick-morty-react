@@ -6,8 +6,58 @@
 }
 
 .characterTittle {
+  width: fit-content;
   background-color: #49a6fc;
   border: solid 3px black;
   font-weight: 900;
   border-radius: 0.5rem;
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  padding: 2px 4px 2px 16px;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #121213;
+  border-radius: 100px;
+  background-color: #fff;
+  text-decoration: none;
+  box-shadow: 5px 5px #888888;
+}
+
+.pinkCircle {
+  background-color: #e964bb;
+}
+
+.showMe {
+  font-family: "Montserrat";
+  width: fit-content;
+  font-weight: 700;
+  &:hover {
+    cursor: pointer;
+    color: #ffb74b;
+    -webkit-text-stroke: 0.3px black;
+    font-weight: 900;
+    transform: scale(1.9);
+  }
+}
+
+@media (max-width: 992px) {
+  .largeShow {
+    display: none;
+  }
+}
+
+.controlers {
+  font-family: "Montserrat";
+  background-color: #28eca5;
+  color: black;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px black;
+  &:hover {
+    color: #28eca5;
+    background-color: black;
+  }
 }
