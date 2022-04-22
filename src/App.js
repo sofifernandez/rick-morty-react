@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from './components/NavBar/NavBar.js'
+import { Footer } from "./components/Footer/Footer.js";
 import { Home } from './components/Home/Home'
 import { CharacterListContainer } from "./components/CharacterListContainer/CharacterListContainer.js";
 import { CharacterCard } from './components/CharacterCard/CharacterCard.js'
@@ -23,21 +24,8 @@ function App() {
         <Route exact path="/location/:locationId" element={<LocationCard />} />
          <Route exact path="/episode" element={<EpisodesList />} />
         <Route exact path="/episode/:episodeId" element={<EpisodeCard />} />
-        {/* <Route exact path="/">
-          <Home />
-          <CharacterListContainer />
-        </Route>
-        <Route exact path="/character/:characterId">
-          <CharacterCard />
-        </Route> */}
-        {/* <Route exact path="/location/:locationId">
-          <LocationCard />
-        </Route>
-        <Route exact path="/episode/:episodeId">
-          <EpisodeCard />
-        </Route> */}
       </Routes>
-
+      <Footer/>
 
     </BrowserRouter>
   );
