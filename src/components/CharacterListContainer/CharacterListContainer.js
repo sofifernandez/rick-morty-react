@@ -4,34 +4,42 @@ import { CharacterList } from '../CharacterList/CharacterList'
 
 export const CharacterListContainer = () => {
   const [characters, setCharacters] = useState([]);
-  const [URLPage, setURLpage] = useState(1);
-  const [search, setSearch] = useState()
-  const [showMe, setShowMe] = useState(false)
+  const [URLPage, setURLpage] = useState(1); //set the pages in next/prev buttons
+  const [search, setSearch] = useState(null); // search character by name
+  const [showMe, setShowMe] = useState(false); //show more characters in array
 
-  //https://rickandmortyapi.com/api/character/?name=rick
   useEffect(() => {
-    const stringURL=URLPage.toString()
-    fetch('https://rickandmortyapi.com/api/character?page='+ stringURL)
-      .then(res => res.json()
-        .then(data => setCharacters(data.results)))
-  }, [URLPage])
+    if (search === null) {
+      const stringURL = URLPage.toString()
+      fetch('https://rickandmortyapi.com/api/character?page=' + stringURL)
+        .then(res => res.json()
+          .then(data => setCharacters(data.results)))
+    }
+    else {
+      const stringURL= URLPage.toString()
+      fetch(search + '&page=' + stringURL)
+        .then(res => res.json()
+          .then(data => setCharacters(data.results)))
+    }
+  }, [URLPage, search])
 
-  const handleChange = (event) => {
-    setSearch(event.target.value)
+  const handleSearch = () => {
+    const name = document.querySelector('#searchInput').value
+    setSearch('https://rickandmortyapi.com/api/character/?name='+ name)
   }
 
   const prevPage = () => {
     if (URLPage !== 1) {
-      setURLpage(URLPage-1)
+      setURLpage(URLPage - 1)
     }
-    
   }
 
+ 
   const nextPage = () => {
     if (URLPage !== 42) {
-      setURLpage(URLPage+1)
+      setURLpage(URLPage + 1)
     }
-    setURLpage(URLPage+1)
+    setURLpage(URLPage + 1)
   }
 
   return (
@@ -43,32 +51,24 @@ export const CharacterListContainer = () => {
         {/* SEARCHBOX----------------------------------------------------------- */}
         <div className="row justify-content-center  my-auto">
           <div className=" col-10 col-sm-8 col-md-7 col-lg-5 searchBox">
-            <input className="col-10" type="text" name="busqueda" id="" placeholder="Search" onChange={handleChange} />
-            <div className="header-tag-circle pinkCircle">
-            </div>
+            <input className="col-10" type="text" name="busqueda" id="searchInput" placeholder="Search" />
+            <button type='submit' className=" btnSearch" onClick={handleSearch}> GO! </button>
           </div>
         </div>
-
-          {/* if there is no search active */}
-        {!search ? 
-          <div className="pt-4 mt-4 mb-3 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-12">
-
-            {!showMe ? characters.slice(0, 10).map((character) => (<CharacterList character={character} key={character.id} />))
-              : characters.map((character) => (
-                <><CharacterList character={character} key={character.id} />  </>))}
-            <div className='row justify-content-center largeShow'>
-              <div className="text-center mt-0 showMe" onClick={() => setShowMe(!showMe)}>{showMe? 'Nope, show me less.':'SHOW ME MORE!'}</div>
-              {showMe? <div className='d-flex justify-content-between mb-2'>
-                <div className='px-3 controlers' onClick={prevPage}>Prev</div>
-                <div className='px-3 controlers' onClick={nextPage}>Next</div>
-              </div>:null}
-            </div>
+        <div className="pt-4 mt-4 mb-3 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-12">
+          {!showMe ?
+            characters.slice(0, 10).map((character) => (<CharacterList character={character} key={character.id} />))
+            :
+            characters.map((character) => (
+              <CharacterList character={character} key={character.id} />))}
+          <div className='row justify-content-center largeShow'>
+            <div className="text-center mt-0 showMe" onClick={() => setShowMe(!showMe)}>{showMe ? 'Nope, show me less.' : 'SHOW ME MORE!'}</div>
+            {showMe ? <div className='d-flex justify-content-between mb-2'>
+              <div className='px-3 controlers' onClick={prevPage}>Prev</div>
+              <div className='px-3 controlers' onClick={nextPage}>Next</div>
+            </div> : null}
           </div>
-          :
-          // active search
-          <div className="pt-4 mt-4 mb-3 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-12">
-            {characters.filter(character => character.name.toLowerCase().includes(search.toLowerCase())).map((character) => (<CharacterList character={character} key={character.id} />))}
-          </div>}
+        </div>
       </div>
     </div>
   )

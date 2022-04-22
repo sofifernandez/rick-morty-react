@@ -2,7 +2,7 @@ import './Footer.scss'
 
 export const Footer = () => {
     return (
-        <div className='row justify-content-center container-fluid mx-0 footer'>
+        <div className='row justify-content-center container-fluid mx-0 footer pb-4'>
             <div className='text-center  footerText mt-4'>
                 Designed and developed by Sofía Fernández Ciganda
             </div>
