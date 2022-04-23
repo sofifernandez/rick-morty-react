@@ -31,7 +31,6 @@ export const EpisodeCard = () => {
     }, [charactersURL])
 
     if (!episode) return null;
-
     return (
         <div className='d-flex row container-fluid justify-content-evenly mx-0 mb-5 my-md-auto'>
             {/* -------------------------------------------------------------------------- */
@@ -50,7 +49,7 @@ export const EpisodeCard = () => {
                             Name
                         </div>
                     </div>
-                    <div className='col-11 col-md-7 fs-3 text-center'>
+                    <div className='col-11 col-md-7 fs-3 text-center text-prop'>
                         {episode.name}
                     </div>
                 </div>
@@ -63,7 +62,7 @@ export const EpisodeCard = () => {
                             Air date
                         </div>
                     </div>
-                    <div className='col-11 col-md-7 fs-3 text-center'>
+                    <div className='col-11 col-md-7 fs-3 text-center text-prop'>
                         {episode.air_date}
                     </div>
                 </div>
@@ -76,7 +75,7 @@ export const EpisodeCard = () => {
                             Characters
                         </div>
                     </div>
-                    <div className='col-11 col-md-7 fs-3 text-center'>
+                    <div className='col-11 col-md-7 fs-3 text-center text-prop'>
                         {episode.characters.length}
                     </div>
                 </div>

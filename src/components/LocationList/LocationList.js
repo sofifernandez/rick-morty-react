@@ -19,10 +19,10 @@ export const LocationList = () => {
                 .then((r) => r.json())));
             let array = results.map(x => x.results)
             const array2 = [].concat(array[0], array[1], array[2], array[3], array[4], array[5], array[6]);
+            console.log(array2)
             setLocations(array2.slice(0,20))
         }
         fetchAllLocations()
-
     }, [])
 
     

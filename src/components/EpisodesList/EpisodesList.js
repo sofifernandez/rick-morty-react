@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './EpisodesList.scss'
 
 
@@ -30,72 +30,23 @@ export const EpisodesList = () => {
     if (!episodes) return null
     return (
         <div className="row container justify-content-center mx-auto">
-            {/* SEASON 1 */}
-            <div className="row col-12 col-md-10 justify-content-center mb-5">
-                <div className="fs-3 my-auto headerSeason">
-                    Season 1
+            {episodes.map((season, index) => (
+                <div key={season.index} className="row col-12 col-md-10 justify-content-center mb-5">
+                    <div className="fs-3 my-auto headerSeason">
+                        Season {index + 1}
+                    </div>
+                    <div className="col-12 my-auto heroline"></div>
+                    <div className="text-center fs-3 episodes pt-3">
+                        {season.length ? season.map((episode) => (
+                            <NavLink to={`/episode/${episode.id}`} >
+                                <div key={episode.id} className="px-4 mb-3 episodeEach" id={episode.id}>
+                                    {episode.episode}
+                                </div>
+                            </NavLink>))
+                            : "Loading..."}
+                    </div>
                 </div>
-                <div className="col-12 my-auto heroline"></div>
-                <div className="text-center fs-3 episodes pt-3">
-                    {episodes.length ? episodes[0].map((episode) => (
-                        <NavLink to={`/episode/${episode.id}`}><div className="px-4 mb-3 episodeEach" id={episode.id}>{episode.episode}</div></NavLink>))
-                        : "Loading..."
-                    }
-                </div>
-            </div>
-            {/* SEASON 2 */}
-            <div className="row col-12 col-md-10 justify-content-center mb-5">
-                <div className="fs-3 my-auto headerSeason">
-                    Season 2
-                </div>
-                <div className="col-12 my-auto heroline"></div>
-                <div className="text-center fs-3 episodes pt-3">
-                    {episodes.length ? episodes[1].map((episode) => (
-                        <NavLink to={`/episode/${episode.id}`}><div className="px-4 mb-3 episodeEach" id={episode.id}>{episode.episode}</div></NavLink>))
-                        : "Loading..."
-                    }
-                </div>
-            </div>
-            {/* SEASON 3 */}
-            <div className="row col-12 col-md-10 justify-content-center mb-5">
-                <div className="fs-3 my-auto headerSeason">
-                    Season 3
-                </div>
-                <div className="col-12 my-auto heroline"></div>
-                <div className="text-center fs-3 episodes pt-3">
-                    {episodes.length ? episodes[2].map((episode) => (
-                        <NavLink to={`/episode/${episode.id}`}><div className="px-4 mb-3 episodeEach" id={episode.id}>{episode.episode}</div></NavLink>))
-                        : "Loading..."
-                    }
-                </div>
-            </div>
-                    {/* SEASON 4 */}
-            <div className="row col-12 col-md-10 justify-content-center mb-5">
-                <div className="fs-3 my-auto headerSeason">
-                    Season 4
-                </div>
-                <div className="col-12 my-auto heroline"></div>
-                <div className="text-center fs-3 episodes pt-3">
-                    {episodes.length ? episodes[3].map((episode) => (
-                        <NavLink to={`/episode/${episode.id}`}><div className="px-4 mb-3 episodeEach" id={episode.id}>{episode.episode}</div></NavLink>))
-                        : "Loading..."
-                    }
-                </div>
-            </div>
-
-            {/* SEASON 5 */}
-            <div className="row col-12 col-md-10 justify-content-center mb-5">
-                <div className="fs-3 my-auto headerSeason">
-                    Season 5
-                </div>
-                <div className="col-12 my-auto heroline"></div>
-                <div className="text-center fs-3 episodes pt-3">
-                    {episodes.length ? episodes[4].map((episode) => (
-                        <NavLink to={`/episode/${episode.id}`}><div className="px-4 mb-3 episodeEach" id={episode.id}>{episode.episode}</div></NavLink>))
-                        : "Loading..."
-                    }
-                </div>
-            </div>
+            ))}
         </div>
     )
 }

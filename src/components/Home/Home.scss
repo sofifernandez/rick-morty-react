@@ -4,7 +4,6 @@
 
 .title-backcolor_1 {
   width: fit-content;
-  //font-size: 3rem;
   font-weight: 900;
   border: 2px solid black;
   border-radius: 3px;
@@ -18,7 +17,15 @@
     z-index: 1;
     box-shadow: 5px 5px #3f3f3f;
   }
+    a{
+      font-weight: 900;
+      &:hover{
+        color: black
+      }
+    }
 }
+
+
 
 .title-backcolor_2 {
   @extend .title-backcolor_1;
@@ -29,6 +36,7 @@
     border: dashed 2px black;
     z-index: 1;
   }
+
 }
 
 .title-backcolor_3 {

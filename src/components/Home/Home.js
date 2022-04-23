@@ -1,4 +1,5 @@
 import blackwhiteimg from "../../images/bitmap.png"
+import { NavLink } from "react-router-dom";
 import './Home.scss'
 
 export const Home = () => {
@@ -11,27 +12,29 @@ export const Home = () => {
                 </div>
                 <div className="justify-content-center col-12 col-sm-8 col-md-5 ms-3 my-auto">
                     {/* CHARACTERS */}
-                    <div className="row">
-                        <div className="col-8 fs-1 mb-2 text-center title-backcolor_1 animate__animated animate__zoomIn">
-                            characters:
+                    
+                        <div className="row">
+                            <div className="col-8 fs-1 mb-2 text-center title-backcolor_1 animate__animated animate__zoomIn">
+                               <NavLink to={'/character'}> characters:</NavLink>
+                            </div>
+                            <div className="col-4 text-center align-middle fs-1">826</div>
                         </div>
-                        <div className="col-4 text-center align-middle fs-1">826</div>
-                    </div>
+                  
                     {/* EPISODES */}
                     <div className="row">
                         <div className="col-8 fs-1 mb-2 text-center title-backcolor_2 animate__animated animate__zoomIn animate__delay-1s">
-                            episodes:
+                             <NavLink to={'/episode'}> episodes:</NavLink>
                         </div>
                         <div className="col-4 text-center align-middle fs-1">51</div>
                     </div>
                     {/* LOCATIONS */}
                     <div className="row">
                         <div className="col-8 fs-1 mb-2 text-center  title-backcolor_3 animate__animated animate__zoomIn animate__delay-2s">
-                            locations:
+                            <NavLink to={'/location'}> locations:</NavLink>
                         </div>
                         <div className="col-4 text-center align-middle fs-1">126</div>
                     </div>
-                </div>  
+                </div>
             </div>
             {/* -------------------------------------------------------------------------- */
             /*                               DANCING QUOTES                               */
