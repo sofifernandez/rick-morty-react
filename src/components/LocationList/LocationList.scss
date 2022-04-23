@@ -21,3 +21,18 @@
     background-color: black;
   }
 }
+
+.controlersOnLocation {
+  font-family: "Montserrat";
+  background-color: #49A6FC;
+  color: black;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px black;
+
+  &:hover {
+    color: #49A6FC;
+    background-color: black;
+    cursor: pointer;
+  }
+}

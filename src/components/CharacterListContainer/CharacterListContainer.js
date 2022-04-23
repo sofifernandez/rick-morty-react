@@ -54,7 +54,7 @@ export const CharacterListContainer = () => {
         {/* ----------------SEARCHBOX---------------------------------------------------------------- */}
         <div className="row justify-content-center  my-auto">
           <div className=" col-10 col-sm-8 col-md-7 col-lg-5 searchBox">
-            <input className="col-10" type="text" name="busqueda" id="searchInput" placeholder="Search" />
+            <input className="col-10" type="text" name="busqueda" id="searchInput" placeholder="Search characters" />
             <button type='submit' className=" btnSearch" onClick={handleSearch}> GO! </button>
           </div>
          {error404 ? <div className="row justify-content-center mt-1">OMG, you are useless. Try again you glip-glop.</div>: null}
@@ -66,8 +66,9 @@ export const CharacterListContainer = () => {
             characters.slice(0, 10).map((character) => (<CharacterList character={character} key={character.id} />))
             :
             characters.map((character) => (
-              <CharacterList character={character} key={character.id} />))}
-          <div className='row justify-content-center largeShow'>
+              <CharacterList character={character} key={character.id} />))
+          }
+          <div className='row justify-content-center'>
             <div className="text-center mt-0 showMe" onClick={() => setShowMe(!showMe)}>{showMe ? 'Nope, show me less.' : 'SHOW ME MORE!'}</div>
             {showMe ?
               <div className='d-flex justify-content-between mb-2'>
