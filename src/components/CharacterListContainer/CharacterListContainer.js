@@ -52,8 +52,8 @@ export const CharacterListContainer = () => {
         </div>
 
         {/* ----------------SEARCHBOX---------------------------------------------------------------- */}
-        <div className="row justify-content-center  my-auto">
-          <div className=" col-10 col-sm-8 col-md-7 col-lg-5 searchBox">
+        <div className="row justify-content-center my-auto">
+          <div className=" col-12 col-sm-8 col-md-7 col-lg-5 searchBox">
             <input className="col-10" type="text" name="busqueda" id="searchInput" placeholder="Search characters" />
             <button type='submit' className=" btnSearch" onClick={handleSearch}> GO! </button>
           </div>
@@ -61,7 +61,7 @@ export const CharacterListContainer = () => {
         </div>
         {/*------------------------------------------------------------------------------------------*/}
 
-        <div className="pt-4 mt-4 mb-3 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-12">
+        <div className="pt-4 mt-4 mb-3 mb-md-5 mx-0 px-0 container-fluid row justify-content-center justify-self-center col-12">
           {!showMe ?
             characters.slice(0, 10).map((character) => (<CharacterList character={character} key={character.id} />))
             :

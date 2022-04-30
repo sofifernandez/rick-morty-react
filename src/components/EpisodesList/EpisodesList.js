@@ -51,7 +51,7 @@ export const EpisodesList = () => {
         <div className="row container justify-content-center mx-auto">
             {/* ----------------SEARCHBOX---------------------------------------------------------------- */}
             <div className="row justify-content-center mb-5">
-                <div className=" col-10 col-sm-8 col-md-7 col-lg-5 searchBox">
+                <div className=" col-12 col-sm-8 col-md-7 col-lg-5 searchBox">
                     <input className="col-10" type="text" name="busqueda" id="searchInput" placeholder="Search by episode name" />
                     <button type='submit' className=" btnSearch" onClick={handleSearch}> GO! </button>
                 </div>

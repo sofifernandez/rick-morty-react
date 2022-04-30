@@ -51,7 +51,7 @@ export const LocationList = () => {
             </div>
             {/* ----------------SEARCHBOX---------------------------------------------------------------- */}
             <div className="row justify-content-center  my-auto">
-                <div className=" col-10 col-sm-8 col-md-7 col-lg-5 searchBox">
+                <div className=" col-12 col-sm-8 col-md-7 col-lg-5 searchBox">
                     <input className="col-10" type="text" name="busqueda" id="searchInput" placeholder="Search locations" />
                     <button type='submit' className=" btnSearch" onClick={handleSearch}> GO! </button>
                 </div>
@@ -62,7 +62,11 @@ export const LocationList = () => {
             <div className="col-12 mt-3 heroline"></div>
             <div className="text-center fs-3 locations pt-3">
                 {locations.length ? locations.map((location) => (
-                    <NavLink key={location.id} to={`/location/${location.id}`}><div className="px-4 mb-3 locationEach" id={location.id}>{location.name}</div></NavLink>))
+                    <NavLink key={location.id} to={`/location/${location.id}`}>
+                        <div className="px-4 mb-3 locationEach fs-4" id={location.id}>
+                            {location.name}
+                        </div>
+                    </NavLink>))
                     : "Loading..."
                 }
             </div>
