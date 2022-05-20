@@ -1,6 +1,6 @@
 # This is Riggity Wrecked, son! :wine_glass: WORK IN PROGRESS...
 
-A personal project to expand my portfolio using React and this amazing [Rick and Morty API](https://rickandmortyapi.com/) created by Axel Fuhrmann. You can find the deploy [here](https://riggity-wrecked.netlify.app/).
+A personal project to expand my portfolio using React and this amazing [Rick and Morty API](https://rickandmortyapi.com/) created by Axel Fuhrmann. You can find the deploy [here](https://wriggity-wrecked.netlify.app).
 
 A little backstory...
 I am a Microbiologist :microscope: from Uruguay, but I have always loved computers and IT. It all took off when I had to analyze microbiota data for my PhD, there was no going back after that. And here we are. Huge Rick and Morty fan over here.
