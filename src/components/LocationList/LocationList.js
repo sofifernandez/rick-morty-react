@@ -52,7 +52,7 @@ export const LocationList = () => {
             {/* ----------------SEARCHBOX---------------------------------------------------------------- */}
             <div className="row justify-content-center  my-auto">
                 <div className=" col-12 col-sm-8 col-md-7 col-lg-5 searchBox">
-                    <input className="col-10" type="text" name="busqueda" id="searchInput" placeholder="Search locations" />
+                    <input className="col-9 col-sm-10" type="text" name="busqueda" id="searchInput" placeholder="Search locations" />
                     <button type='submit' className=" btnSearch" onClick={handleSearch}> GO! </button>
                 </div>
                 {error404 ? <div className="row justify-content-center mt-1">OMG, you are useless. Try again you glip-glop.</div> : null}
