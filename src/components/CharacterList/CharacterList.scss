@@ -21,7 +21,7 @@
   height: 100%;
   border-radius: 1rem;
   border: 2px solid black;
-  width: 85%;
+  width: 94%;
   a {
     color: #f1f1f1;
   }
@@ -37,6 +37,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 900;
+}
+
+.mobile-text{
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 // MOBILE

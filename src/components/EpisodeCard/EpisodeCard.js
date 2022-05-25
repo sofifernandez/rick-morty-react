@@ -36,7 +36,7 @@ export const EpisodeCard = () => {
             {/* -------------------------------------------------------------------------- */
             /*                                    CARD                                    */
             /* -------------------------------------------------------------------------- */}
-            <div className='row col-9 col-lg-8 col-xl-6 justify-content-center mt-5 mb-5 mainCardEpisode'>
+            <div className='row col-12 col-sm-9 col-lg-8 col-xl-6 justify-content-center mt-5 mb-5 mainCardEpisode'>
                 <div className='text-center episodeName fs-1 col-12 my-3'>
                     {episode.episode}
                 </div>
@@ -83,12 +83,12 @@ export const EpisodeCard = () => {
             {/* -------------------------------------------------------------------------- */
             /*                                    CHARACTER LIST                            */
             /* -------------------------------------------------------------------------- */}
-            <div className='container-fluid row justify-content-center mt-0 mx-0 px-0 mb-5'>
-                <div className="character-section pt-4 mt-4 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-11 col-md-10">
+            <div className='container-fluid col-12 row justify-content-center mt-0 mx-0 px-0 mb-5'>
+                <div className="character-section pt-4 mt-4 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-12 col-sm-11 col-md-10">
                     <div className='characterTittle fs-1 text-center col-6'>
                         Characters
                     </div>
-                    <div className="pt-4 mt-4 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-12">
+                    <div className="pt-4 px-0 mt-4 mb-md-5 mx-0 container-fluid row justify-content-center justify-self-center col-12">
                         {charactersList.length ? charactersList.map((character) => (<CharacterList character={character} key={character.id} />))
                             : "Loading..."
                         }
